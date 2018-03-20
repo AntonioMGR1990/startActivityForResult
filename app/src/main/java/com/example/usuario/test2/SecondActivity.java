@@ -1,5 +1,6 @@
 package com.example.usuario.test2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,13 +26,13 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         returnIntent.putExtra("result",RESULT_OK);
         returnIntent.putExtra("texto","mensaje de vuelta");
-        setResult(MainActivity.RESULT_OK,returnIntent);
+        setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }
     public void Cancelar(View view){
         Toast.makeText(this,"no has aceptado",Toast.LENGTH_SHORT).show();
         returnIntent.putExtra("texto","");
-        setResult(MainActivity.RESULT_CANCELED,returnIntent);
+        setResult(Activity.RESULT_CANCELED,returnIntent);
         finish();
     }
 }

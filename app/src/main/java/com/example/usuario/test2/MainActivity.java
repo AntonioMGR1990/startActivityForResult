@@ -29,14 +29,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == 1) {
-            if(resultCode == SecondActivity.RESULT_OK){
-                String result=data.getStringExtra("texto");
-                texto.setText(result);
-            }
-            if (resultCode == SecondActivity.RESULT_CANCELED) {
-                String result=data.getStringExtra("texto");
-                texto.setText(result);
+        if (data != null) {
+            if (requestCode == 1) {
+                if (resultCode == SecondActivity.RESULT_OK) {
+                    String result = data.getStringExtra("texto");
+                    texto.setText(result);
+                }
+                if (resultCode == SecondActivity.RESULT_CANCELED) {
+                    String result = data.getStringExtra("texto");
+                    texto.setText(result);
+                }
             }
         }
     }
